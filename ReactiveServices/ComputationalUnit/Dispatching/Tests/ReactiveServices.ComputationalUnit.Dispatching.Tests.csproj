@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6170B11-2A9D-419D-BDFB-F8B369EC21EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReactiveServices.ComputationalUnit.Dispatching.Tests</RootNamespace>
+    <AssemblyName>ReactiveServices.ComputationalUnit.Dispatching.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <!--<DontImportPostSharp>True</DontImportPostSharp>-->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.1.20.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\PostSharp.4.1.20\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.1.20.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\PostSharp.Patterns.Diagnostics.4.1.20\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.5.4.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RabbitMQ.Client.3.5.4\lib\net40\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Authorization, Version=0.2.5686.17642, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Configuration, Version=0.2.5686.17608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Extensions, Version=0.2.5686.17605, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus, Version=0.2.5686.17609, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.0.2.6\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus.RabbitMQ, Version=0.2.5686.17643, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.MessageBus.RabbitMQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=2.8.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SimpleInjector.2.8.3\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sprache, Version=2.0.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sprache.2.0.0.46\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid1+MonoTouch1\Sprache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnotherDummyJob.cs" />
+    <Compile Include="DummyWorker.cs" />
+    <Compile Include="DummyJob.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="JavaScriptComplexContractResolver.cs" />
+    <Compile Include="JavaScriptComplexConverter.cs" />
+    <Compile Include="MatrixRequests.cs" />
+    <Compile Include="MatrixWorkers.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleWorker.cs" />
+    <Compile Include="SettingsBuilder.cs" />
+    <Compile Include="Specifications\DespachanteDeTrabalhosComVidaUtilLimitada.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DespachanteDeTrabalhosComVidaUtilLimitada.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\EncerrarExecucaoDeTrabalho.feature.cs">
+      <DependentUpon>EncerrarExecucaoDeTrabalho.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Specifications\EncerrarExecucaoDeDespachante.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EncerrarExecucaoDeDespachante.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\StepDefinition_Hooks.cs" />
+    <Compile Include="Specifications\StepDefinition_Steps.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specifications\ConfigurarEncaminhamentoDeSolicitacoes.feature.cs">
+      <DependentUpon>ConfigurarEncaminhamentoDeSolicitacoes.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Specifications\ConfigurarRecebimentoDeSolicitacoes.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurarRecebimentoDeSolicitacoes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\EncaminharSolicitacaoAoResponsavel.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EncaminharSolicitacaoAoResponsavel.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ReceberNotificacoesDeConclusaoDeProcessamento.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceberNotificacoesDeConclusaoDeProcessamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ReceberSolicitacoesPendentes.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceberSolicitacoesPendentes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\StepsExecutor.cs" />
+    <Compile Include="UnitTests\DispatcherSettingsTests.cs" />
+    <Compile Include="UnitTests\JobConfigurationTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ReactiveServices.ComputationalUnit.Dispatching.Tests.psproj" />
+    <Content Include="Dependencies.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Resources\Matrix1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Matrix2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Matrix3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Matrix4.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Matrix5.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Specifications\ConfigurarEncaminhamentoDeSolicitacoes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigurarEncaminhamentoDeSolicitacoes.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\ConfigurarRecebimentoDeSolicitacoes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigurarRecebimentoDeSolicitacoes.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\DespachanteDeTrabalhosComVidaUtilLimitada.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DespachanteDeTrabalhosComVidaUtilLimitada.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\EncaminharSolicitacaoAoResponsavel.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EncaminharSolicitacaoAoResponsavel.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\EncerrarExecucaoDeTrabalho.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EncerrarExecucaoDeTrabalho.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\EncerrarExecucaoDeDespachante.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EncerrarExecucaoDeDespachante.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\ReceberNotificacoesDeConclusaoDeProcessamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReceberNotificacoesDeConclusaoDeProcessamento.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specifications\ReceberSolicitacoesPendentes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReceberSolicitacoesPendentes.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Application\ReactiveServices.Application.csproj">
+      <Project>{aecc755c-7aa6-4133-aff5-4f0e2e541d5f}</Project>
+      <Name>ReactiveServices.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ComputationalUnit.csproj">
+      <Project>{8f778147-1c8c-440e-9e34-c0a3ed06d1f4}</Project>
+      <Name>ComputationalUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReactiveServices.ComputationalUnit.Dispatching.csproj">
+      <Project>{00c424bb-c824-4f8a-b582-6cf7790ac02b}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Dispatching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Settings\ReactiveServices.ComputationalUnit.Settings.csproj">
+      <Project>{d5c5dc52-ba8e-4532-b504-5348344fc03d}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Work\ReactiveServices.ComputationalUnit.Work.csproj">
+      <Project>{ed760e83-007e-46e7-bf1b-e781ef7d655a}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Work</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--<Import Project="..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets" Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" />-->
+  <!--<Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>-->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets" Condition="Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

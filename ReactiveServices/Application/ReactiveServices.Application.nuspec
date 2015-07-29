@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>0.2.6</version>
+    <releaseNotes>Reactive Services Alpha</releaseNotes>
+    <id>$title$</id>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <description>$description$</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/ReactiveServices/ReactiveServices.Application/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ReactiveServices</projectUrl>
+    <summary>
+      Provide all libraries necessary to build a Reactive Services application
+    </summary>
+    <tags>reactiveservices microservices actormodel distributed cloud docker</tags>
+  </metadata>
+</package>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41DF447C-C48D-47B9-B5CD-A59A996A9933}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReactiveServices.Application.Monitoring.Tests</RootNamespace>
+    <AssemblyName>ReactiveServices.Application.Monitoring.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <!--<DontImportPostSharp>True</DontImportPostSharp>-->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.1.20.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\PostSharp.4.1.20\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.1.20.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\PostSharp.Patterns.Diagnostics.4.1.20\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.5.4.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RabbitMQ.Client.3.5.4\lib\net40\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Authorization, Version=0.2.5686.17642, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Configuration, Version=0.2.5686.17608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Extensions, Version=0.2.5686.17605, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus, Version=0.2.5686.17609, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.0.2.6\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus.RabbitMQ, Version=0.2.5686.17643, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ReactiveServices.MessageBus.RabbitMQ.0.2.6\lib\net451\ReactiveServices.MessageBus.RabbitMQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=2.8.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SimpleInjector.2.8.3\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sprache, Version=2.0.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sprache.2.0.0.46\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid1+MonoTouch1\Sprache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specifications\StepsContext.cs" />
+    <Compile Include="Specifications\StepsDefinition.cs" />
+    <Compile Include="Specifications\VerificacaoDeDespachantesDeTrabalhoEmExecucao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerificacaoDeDespachantesDeTrabalhoEmExecucao.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ComputationalUnit\ComputationalUnit.csproj">
+      <Project>{8f778147-1c8c-440e-9e34-c0a3ed06d1f4}</Project>
+      <Name>ComputationalUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ComputationalUnit\Dispatching\ReactiveServices.ComputationalUnit.Dispatching.csproj">
+      <Project>{00C424BB-C824-4F8A-B582-6CF7790AC02B}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Dispatching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ComputationalUnit\Dispatching\Tests\ReactiveServices.ComputationalUnit.Dispatching.Tests.csproj">
+      <Project>{C6170B11-2A9D-419D-BDFB-F8B369EC21EF}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Dispatching.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ComputationalUnit\Settings\ReactiveServices.ComputationalUnit.Settings.csproj">
+      <Project>{D5C5DC52-BA8E-4532-B504-5348344FC03D}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ComputationalUnit\Work\ReactiveServices.ComputationalUnit.Work.csproj">
+      <Project>{ed760e83-007e-46e7-bf1b-e781ef7d655a}</Project>
+      <Name>ReactiveServices.ComputationalUnit.Work</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ReactiveServices.Application.csproj">
+      <Project>{aecc755c-7aa6-4133-aff5-4f0e2e541d5f}</Project>
+      <Name>ReactiveServices.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="Dependencies.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ReactiveServices.Application.Monitoring.Tests.psproj" />
+    <None Include="Specifications\VerificacaoDeDespachantesDeTrabalhoEmExecucao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VerificacaoDeDespachantesDeTrabalhoEmExecucao.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets" Condition="Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!--<Import Project="..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets" Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" />-->
+  <!--<Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
