@@ -35,7 +35,7 @@ The worker which the job request was dispatched to will execute the job and publ
 
 #### Talking to the Message Bus
 
-Any process of publish or receive a message from the Message Bus must be performed using the **ReactiveServices.MessageBus** package. See the [package documentation](http://) for more details.
+Any process of publish or receive a message from the Message Bus must be performed using the **ReactiveServices.MessageBus** package. See the [package documentation](https://github.com/ReactiveServices/ReactiveServices.MessageBus) for more details.
 
 ## License
 
