@@ -8,7 +8,7 @@ See [this link](http://reactiveservices.github.io) for an overview about the fra
 
 ReactiveServices.Application is the main package of the Reactive Services framework.
 
-### Reactive Service Components
+### Reactive Services Components
 
 This package provides the following components:
 
