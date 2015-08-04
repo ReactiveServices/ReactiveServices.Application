@@ -15,5 +15,7 @@ environment:
     secure: KMaEnJAiM2nL++oL0Ys/z0hNC8Nz+wiIlzx98JhCFISYKWf119WpLlt3FyYgsYNi
 test:
   categories:
-    only:
-      - stable
+    except:
+      - failing
+      - unstable
+      - slow
