@@ -4,6 +4,8 @@ Reactive Services is a framework that support the development of distributed app
 
 See [this link](http://reactiveservices.github.io) for an overview about the framework.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/0jqpqlrydwh2s7xb?svg=true)](https://ci.appveyor.com/project/rafaelromao/reactiveservices-application)
+
 ## ReactiveServices.Application
 
 ReactiveServices.Application is the main package of the Reactive Services framework.

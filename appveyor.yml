@@ -1,0 +1,19 @@
+version: 0.2.{build}
+configuration: Release
+platform: Any CPU
+cache: ReactiveServices/packages
+before_build:
+- nuget restore ReactiveServices/ReactiveServices.Application.sln
+build:
+  project: ReactiveServices/ReactiveServices.Application.sln
+  verbosity: minimal
+environment:
+  RABBITMQ_HOSTNAME: owl.rmq.cloudamqp.com
+  RABBITMQ_VHOST: xrxasxgn
+  RABBITMQ_USERNAME: xrxasxgn
+  RABBITMQ_PASSWORD:
+    secure: KMaEnJAiM2nL++oL0Ys/z0hNC8Nz+wiIlzx98JhCFISYKWf119WpLlt3FyYgsYNi
+test:
+  categories:
+    only:
+      - stable
