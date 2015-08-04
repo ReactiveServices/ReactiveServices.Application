@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>0.2.6</version>
+    <version>$version$</version>
     <releaseNotes>Reactive Services Alpha</releaseNotes>
     <id>$title$</id>
     <authors>$author$</authors>

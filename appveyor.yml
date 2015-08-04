@@ -19,3 +19,7 @@ test:
       - failing
       - unstable
       - slow
+assembly_info:
+  patch: true
+  file: ReactiveServices\Application\Properties\AssemblyInfo.cs
+  assembly_informational_version: '{version}'
