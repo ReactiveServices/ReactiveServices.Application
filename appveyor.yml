@@ -1,9 +1,11 @@
-version: 0.2.{build}
+version: 0.3.{build}
 configuration: Release
 platform: Any CPU
 cache: ReactiveServices/packages
 before_build:
 - nuget restore ReactiveServices/ReactiveServices.Application.sln
+after_build:
+- nuget pack ReactiveServices/Application/ReactiveServices.Application.csproj -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
 build:
   project: ReactiveServices/ReactiveServices.Application.sln
   verbosity: minimal
@@ -16,10 +18,21 @@ environment:
 test:
   categories:
     except:
+      - stable
       - failing
       - unstable
       - slow
+      - load
 assembly_info:
   patch: true
   file: ReactiveServices\Application\Properties\AssemblyInfo.cs
+  assembly_file_version: '{version}'
+  assembly_version: '{version}'
   assembly_informational_version: '{version}'
+artifacts:
+  - path: ReactiveServices.Application.*.nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: f16K1osClAxbT+GmqxPPFj//CRk7rOFm4XtRVJkGTqnvfQwR30LPgTidxUSzRLyd
+  skip_symbols: true

@@ -61,7 +61,7 @@ namespace ReactiveServices.ComputationalUnit.Dispatching
             }
             catch (Exception e)
             {
-                Log.Error("Could not initialize the Dispatcher.", e);
+                Log.Error(e, "Could not initialize the Dispatcher.");
                 throw new InvalidOperationException("Could not initialize the Dispatcher.", e);
             }
         }
@@ -207,11 +207,11 @@ namespace ReactiveServices.ComputationalUnit.Dispatching
             }
             catch (ThreadAbortException tae)
             {
-                Log.Info("ThreadAbortException while taking poison pill!", tae as Exception);
+                Log.Info(tae as Exception, "ThreadAbortException while taking poison pill!");
             }
             catch (Exception e)
             {
-                Log.Error("Exception taking poison pill!", e);
+                Log.Error(e, "Exception taking poison pill!");
                 Environment.Exit(0);
             }
         }
@@ -483,7 +483,7 @@ namespace ReactiveServices.ComputationalUnit.Dispatching
             }
             catch (Exception e)
             {
-                Log.Error(String.Format("Exception disposing dispatcher of id '{0}'", Repository.Settings.DispatcherId), e);
+                Log.Error(e, String.Format("Exception disposing dispatcher of id '{0}'", Repository.Settings.DispatcherId));
                 throw;
             }
 

@@ -71,7 +71,7 @@ namespace ReactiveServices.ComputationalUnit
             catch (Exception ex)
             {
                 var errorMessage = String.Format("Could not load Computational Unit for {0}!", settings.DispatcherId);
-                Log.Error(errorMessage, ex);
+                Log.Error(ex, errorMessage);
                 Console.WriteLine(errorMessage);
                 Environment.Exit(0);
             }

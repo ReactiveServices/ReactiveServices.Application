@@ -144,9 +144,9 @@ namespace ReactiveServices.ComputationalUnit.Dispatching
                     log.Info(logEntry);
             }
             else if (logAsError)
-                log.Error(logEntry.ToString(), exception);
+                log.Error(exception, logEntry.ToString());
             else
-                log.Info(logEntry.ToString(), exception);
+                log.Info(exception, logEntry.ToString());
         }
     }
 }

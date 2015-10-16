@@ -86,9 +86,9 @@ namespace ReactiveServices.ComputationalUnit.Work
                 ExecutingJob.ExecutionException = executionException;
                 executionSucceeded = false;
                 succeeded = false;
-                Log.Error(String.Format("Error when trying to execute {0}!", GetType().Name), executionException);
+                Log.Error(executionException, String.Format("Error when trying to execute {0}!", GetType().Name));
             }
-
+            
             // Se demorou demais para concluir a execução
             if (hasTimedOut)
             {

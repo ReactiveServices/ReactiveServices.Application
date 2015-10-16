@@ -33,31 +33,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.1.2\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PostSharp, Version=4.1.20.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
-      <HintPath>..\packages\PostSharp.4.1.20\lib\net35-client\PostSharp.dll</HintPath>
+    <Reference Include="PostSharp, Version=4.1.27.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.4.1.27\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.1.20.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
-      <HintPath>..\packages\PostSharp.Patterns.Diagnostics.4.1.20\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.1.27.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Patterns.Diagnostics.4.1.27\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReactiveServices.Configuration, Version=0.2.5686.17608, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveServices.MessageBus.0.2.6\lib\net451\ReactiveServices.Configuration.dll</HintPath>
+    <Reference Include="ReactiveServices.Configuration, Version=0.2.5767.35100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveServices.MessageBus.0.3.30\lib\net451\ReactiveServices.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReactiveServices.Extensions, Version=0.2.5686.17605, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveServices.MessageBus.0.2.6\lib\net451\ReactiveServices.Extensions.dll</HintPath>
+    <Reference Include="ReactiveServices.Extensions, Version=0.2.5767.35055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveServices.MessageBus.0.3.30\lib\net451\ReactiveServices.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReactiveServices.MessageBus, Version=0.2.5686.17609, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveServices.MessageBus.0.2.6\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
+    <Reference Include="ReactiveServices.MessageBus, Version=0.3.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveServices.MessageBus.0.3.30\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector, Version=2.8.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.2.8.3\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=3.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.0\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -109,10 +110,10 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\PostSharp.4.1.20\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" />
+  <Import Project="..\packages\PostSharp.4.1.27\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.1.27\tools\PostSharp.targets')" />
   <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
-    <Error Condition="!Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
-    <Error Condition="Exists('..\packages\PostSharp.4.1.20\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="!Exists('..\packages\PostSharp.4.1.27\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.1.27\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
