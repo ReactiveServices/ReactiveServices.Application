@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.postsharp.org/1.0/configuration">
   <Property Name="LoggingBackEnd" Value="nlog" />
-  <Using File="..\packages\PostSharp.Patterns.Diagnostics.4.1.27\tools\PostSharp.Patterns.Diagnostics.Weaver.dll" />
-  <Using File="..\packages\PostSharp.Patterns.Diagnostics.NLog.4.1.27\tools\PostSharp.Patterns.Diagnostics.Weaver.NLog.dll" />
+  <Using File="..\packages\PostSharp.Patterns.Diagnostics.4.1.28\tools\PostSharp.Patterns.Diagnostics.Weaver.dll" />
+  <Using File="..\packages\PostSharp.Patterns.Diagnostics.NLog.4.1.28\tools\PostSharp.Patterns.Diagnostics.Weaver.NLog.dll" />
   <Multicast>
     <LogAttribute xmlns="clr-namespace:PostSharp.Patterns.Diagnostics;assembly:PostSharp.Patterns.Diagnostics" AttributeTargetMemberAttributes="Public" />
     <LogAttribute xmlns="clr-namespace:PostSharp.Patterns.Diagnostics;assembly:PostSharp.Patterns.Diagnostics" AttributeTargetMembers="*et_*" AttributeExclude="true" />
